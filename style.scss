@@ -1,0 +1,258 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
+
+/* universal color css bootstrap 4 */
+$blue: #007bff;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$red: #dc3545;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #28a745;
+$teal: #20c997;
+$cyan: #17a2b8;
+$white: #fff;
+$gray: #6c757d;
+$gray-dark: #343a40;
+$primary: #007bff;
+$secondary: #6c757d;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #343a40;
+$black: #000000;
+
+.btn-ballon{
+  border-radius: 10rem;
+}
+.font-mont{
+  font-family: 'Montserrat', sans-serif;
+}
+.font-vare{
+  font-family: 'Varela Round', sans-serif;
+}
+.heading-bar{
+  border: 2px solid $info;
+  width: 40px;
+}
+.on{
+  display: block !important;
+  transition: all .3s ease-in-out;
+}
+
+@mixin padding-tb($unit){
+  padding-top: $unit;
+  padding-bottom: $unit;
+}
+@mixin padding-lr($unit){
+  padding-left: $unit;
+  padding-right: $unit;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  color: $black;
+}
+.wrapper{
+  position: relative;
+  height: 100%;
+}
+
+header{
+  // transition: all .1s ease-in-out;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10001;
+  @include padding-tb(15px);
+  .menubar{
+    .navbar-brand{
+      font-size: 25pt;
+      font-weight: bold;
+    }
+    a{
+      font-family: 'Varela Round', sans-serif;
+    }
+  }
+}
+.header-scroll{
+  transition: all .2s ease-in-out;
+  @include padding-tb(0);
+  background: $light;
+  .menubar{
+    .navbar-brand{
+      font-size: 18pt !important;
+      font-weight: bold;
+    }
+  }
+}
+
+.banner{
+  position: relative;
+  height: 580px;
+  overflow: hidden;
+  background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url("images/banner-background.jpg");
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .txt-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // background: red;
+    z-index: 10000;
+    width: 65%;
+    h1{
+      font-size: 54px;
+      font-family: 'Montserrat', sans-serif;
+    }
+  }
+}
+
+.box-hover:hover{
+  transition: all .3s ease-in-out;
+  box-shadow: 0 0 1px $info;
+}
+
+.port-hover:hover:after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7));
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.port-hover:hover .txt-box{
+  display: block;
+}
+.port-hover .txt-box{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: none;
+}
+.port-hover img{
+  height: 400px;
+}
+
+.service-slider{
+  .carousel-item{
+    img{
+      height: 400px;
+    }
+  }
+  .carousel-indicators{
+    li{
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+    li.active{
+      position: relative;
+      margin-top: 10px;
+      width: 30px;
+      height: 0;
+      border-radius: 1rem;
+      background: $info;
+      transition: all .3s ease-in-out;
+    }
+  }
+}
+
+.work-summery{
+  overflow: hidden;
+  background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)), url("images/work-summery.jpg");
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.plan-circle{
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 2px solid $info;
+  padding: 8%;
+}
+
+.intro{
+  background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)), url("images/intro.jpg");
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+}
+
+.team-hover:hover:after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8));
+  left: 0;
+  top: 0;
+}
+.team-hover:hover h4, .team-hover:hover p, .team-hover:hover .icon-box{
+  color: $white;
+  position: relative;
+  z-index: 1;
+}
+
+.scroll-top{
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  display: none;
+}
+
+/*------------------------------------max width 767px---------------------------------------*/
+@media(max-width: 767px){
+  header{
+    background: linear-gradient(rgba(100, 100, 100, .8),rgba(100, 100, 100, .8));
+  }
+
+  .banner{
+    background-size: 100% 100%;
+    .txt-box{
+      h1{
+        font-size: 18pt;
+        color: $info;
+      }
+    }
+  }
+
+  .box-hover:hover{
+    transition: all .3s ease-in-out;
+    box-shadow: 0 0 1px $info;
+  }
+
+  .port-hover img{
+    height: 100%;
+  }
+
+  .service-slider{
+    .carousel-item{
+      img{
+        height: 100%;
+      }
+    }
+  }
+}
